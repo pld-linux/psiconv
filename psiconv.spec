@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		Libraries
 Source0:	http://huizen.dds.nl/~frodol/psiconv/%{name}-%{version}.tar.gz
+# Source0-md5:	7fe2b6d926aa7fb3b2ef77aada4adaf9
 URL:		http://huizen.dds.nl/~frodol/psiconv/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
