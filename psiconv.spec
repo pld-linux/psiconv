@@ -83,7 +83,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc formats/html/*
 %attr(755,root,root) %{_libdir}/libpsiconv.so
-%attr(755,root,root) %{_libdir}/libpsiconv.la
+%{_libdir}/libpsiconv.la
 %{_includedir}/psiconv
 
 %files static
