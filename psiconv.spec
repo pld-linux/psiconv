@@ -1,12 +1,12 @@
 Summary:	Psion 5 data format library
 Summary(pl):	Biblioteka obs³ugi plików Psion 5
 Name:		psiconv
-Version:	0.9.6
-Release:	1
+Version:	0.8.3
+Release:	2
 License:	GPL
 Group:		Libraries
 Source0:	http://huizen.dds.nl/~frodol/psiconv/%{name}-%{version}.tar.gz
-# Source0-md5:	a17bdea04d57877fbd037556b6421f46
+# Source0-md5:	7fe2b6d926aa7fb3b2ef77aada4adaf9
 URL:		http://huizen.dds.nl/~frodol/psiconv/
 BuildRequires:	ImageMagick-devel
 BuildRequires:	automake
@@ -70,7 +70,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -rf formats/xhtml/.temp
+rm -rf formats/html/.temp
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -80,18 +80,16 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README TODO
-%attr(640,root,root) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/psiconv/psiconv.conf
+%doc AUTHORS NEWS README TODO
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/libpsiconv.so.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%doc formats/xhtml/*
+%doc formats/html/*
 %attr(755,root,root) %{_libdir}/libpsiconv.so
 %{_libdir}/libpsiconv.la
 %{_includedir}/psiconv
-%{_mandir}/man1/*.1.gz
 
 %files static
 %defattr(644,root,root,755)
