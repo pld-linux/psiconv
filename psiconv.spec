@@ -83,13 +83,18 @@ Statyczna biblioteka psiconv.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
 rm -rf formats/html/.temp
+
 gzip -9nf AUTHORS NEWS README TODO
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post   -p /sbin/ldconfig
+%postun -p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
