@@ -87,7 +87,7 @@ rm -rf $RPM_BUILD_ROOT
 %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/%{name}/*
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/psion
-%{_mandir}/man1/*.1.gz
+%{_mandir}/man1/*.1*
 
 %files devel
 %defattr(644,root,root,755)
