@@ -7,6 +7,7 @@ License:	GPL
 Group:		Libraries
 Source0:	http://huizen.dds.nl/~frodol/%{name}/%{name}-%{version}.tar.gz
 # Source0-md5:	a17bdea04d57877fbd037556b6421f46
+Patch0:		%{name}-gcc34.patch
 URL:		http://huizen.dds.nl/~frodol/psiconv/
 BuildRequires:	ImageMagick-devel
 BuildRequires:	automake
@@ -58,6 +59,7 @@ Statyczna biblioteka psiconv.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 cp -f /usr/share/automake/config.sub .
