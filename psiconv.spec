@@ -16,21 +16,21 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 This package is meant to make the Psion 5 series of PDAs, as well as
 other small computers running Epoc 32, more usable to non-Windows
 users. The package consists of several parts:
- - Documentation about Psion 5 data formats;
- - A library which can be linked against application that have to read
-   (and in the future, perhaps write) Psion 5 files;
- - An example command-line program which reads Psion files and writes
-   more commonly used formats.
+- Documentation about Psion 5 data formats;
+- A library which can be linked against application that have to read
+  (and in the future, perhaps write) Psion 5 files;
+- An example command-line program which reads Psion files and writes
+  more commonly used formats.
 
 %description -l pl
 Ten pakiet ma za zadanie uczyniæ PDA serii Psion 5 oraz inne ma³e
 komputery na Epoc 32 bardziej u¿ytecznymi dla u¿ytkowników systemów
 innych ni¿ Windows. Pakiet zawiera:
- - dokumentacjê o formatach danych Psion 5,
- - bibliotekê dla aplikacji, która mo¿e czytaæ (w przysz³o¶ci byæ mo¿e
-   tak¿e zapisywaæ) pliki Psion 5,
- - przyk³adowy program czytaj±cy pliki Psion 5 i zapisuj±cy w czê¶ciej
-   spotykanych formatach.
+- dokumentacjê o formatach danych Psion 5,
+- bibliotekê dla aplikacji, która mo¿e czytaæ (w przysz³o¶ci byæ mo¿e
+  tak¿e zapisywaæ) pliki Psion 5,
+- przyk³adowy program czytaj±cy pliki Psion 5 i zapisuj±cy w czê¶ciej
+  spotykanych formatach.
 
 %package devel
 Summary:	Development part of psiconv
@@ -75,8 +75,8 @@ rm -rf formats/html/.temp
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post   -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
