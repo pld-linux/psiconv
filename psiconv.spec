@@ -8,6 +8,7 @@ Group:		Libraries
 Source0:	http://huizen.dds.nl/~frodol/psiconv/%{name}-%{version}.tar.gz
 # Source0-md5:	7fe2b6d926aa7fb3b2ef77aada4adaf9
 URL:		http://huizen.dds.nl/~frodol/psiconv/
+BuildRequires:	ImageMagick-devel
 BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -35,7 +36,7 @@ innych ni¿ Windows. Pakiet zawiera:
 Summary:	Development part of psiconv
 Summary(pl):	Czê¶æ psiconv przeznaczona dla programistów
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for psiconv and Psion 5 file format documentation.
@@ -47,7 +48,7 @@ Pliki nag³ówkowe psiconv oraz dokumentacja formatu plików Psion 5.
 Summary:	Static psiconv library
 Summary(pl):	Statyczna biblioteka psiconv
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static psiconv library.
@@ -66,7 +67,8 @@ cp -f /usr/share/automake/config.sub .
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 rm -rf formats/html/.temp
 
