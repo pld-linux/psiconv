@@ -67,8 +67,6 @@ rm -rf $RPM_BUILD_ROOT
 
 rm -rf formats/html/.temp
 
-gzip -9nf AUTHORS NEWS README TODO
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -77,7 +75,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc AUTHORS NEWS README TODO
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/libpsiconv.so.*.*
 
