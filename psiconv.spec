@@ -11,6 +11,7 @@ Patch0:		%{name}-gcc34.patch
 URL:		http://huizen.dds.nl/~frodol/psiconv/
 BuildRequires:	ImageMagick-devel
 BuildRequires:	automake
+BuildRequires:	bc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
