@@ -1,12 +1,12 @@
 Summary:	Psion 5 data format library
 Summary(pl):	Biblioteka obs³ugi plików Psion 5
 Name:		psiconv
-Version:	0.9.6
+Version:	0.9.7
 Release:	1
 License:	GPL
 Group:		Libraries
 Source0:	http://huizen.dds.nl/~frodol/psiconv/%{name}-%{version}.tar.gz
-# Source0-md5:	a17bdea04d57877fbd037556b6421f46
+# Source0-md5:	1a14f0e5a047d136348b6c0e19051289
 Patch0:		%{name}-gcc34.patch
 URL:		http://huizen.dds.nl/~frodol/psiconv/
 BuildRequires:	ImageMagick-devel
@@ -90,6 +90,7 @@ rm -rf $RPM_BUILD_ROOT
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/%{name}/*
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/psion
+%{_datadir}/psiconv/xhtml/*.html
 %{_mandir}/man1/*.1*
 
 %files devel
