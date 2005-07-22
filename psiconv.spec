@@ -90,7 +90,7 @@ rm -rf $RPM_BUILD_ROOT
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/%{name}/*
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/psion
-%{_datadir}/psiconv/xhtml/*.html
+%{_datadir}/%{name}/xhtml
 %{_mandir}/man1/*.1*
 
 %files devel
