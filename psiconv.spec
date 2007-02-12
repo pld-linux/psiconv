@@ -1,5 +1,5 @@
 Summary:	Psion 5 data format library
-Summary(pl):	Biblioteka obs³ugi plików Psion 5
+Summary(pl.UTF-8):   Biblioteka obsÅ‚ugi plikÃ³w Psion 5
 Name:		psiconv
 Version:	0.9.7
 Release:	3
@@ -24,38 +24,38 @@ users. The package consists of several parts:
 - An example command-line program which reads Psion files and writes
   more commonly used formats.
 
-%description -l pl
-Ten pakiet ma za zadanie uczyniæ PDA serii Psion 5 oraz inne ma³e
-komputery na Epoc 32 bardziej u¿ytecznymi dla u¿ytkowników systemów
-innych ni¿ Windows. Pakiet zawiera:
-- dokumentacjê o formatach danych Psion 5,
-- bibliotekê dla aplikacji, która mo¿e czytaæ (w przysz³o¶ci byæ mo¿e
-  tak¿e zapisywaæ) pliki Psion 5,
-- przyk³adowy program czytaj±cy pliki Psion 5 i zapisuj±cy w czê¶ciej
+%description -l pl.UTF-8
+Ten pakiet ma za zadanie uczyniÄ‡ PDA serii Psion 5 oraz inne maÅ‚e
+komputery na Epoc 32 bardziej uÅ¼ytecznymi dla uÅ¼ytkownikÃ³w systemÃ³w
+innych niÅ¼ Windows. Pakiet zawiera:
+- dokumentacjÄ™ o formatach danych Psion 5,
+- bibliotekÄ™ dla aplikacji, ktÃ³ra moÅ¼e czytaÄ‡ (w przyszÅ‚oÅ›ci byÄ‡ moÅ¼e
+  takÅ¼e zapisywaÄ‡) pliki Psion 5,
+- przykÅ‚adowy program czytajÄ…cy pliki Psion 5 i zapisujÄ…cy w czÄ™Å›ciej
   spotykanych formatach.
 
 %package devel
 Summary:	Development part of psiconv
-Summary(pl):	Czê¶æ psiconv przeznaczona dla programistów
+Summary(pl.UTF-8):   CzÄ™Å›Ä‡ psiconv przeznaczona dla programistÃ³w
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for psiconv and Psion 5 file format documentation.
 
-%description devel -l pl
-Pliki nag³ówkowe psiconv oraz dokumentacja formatu plików Psion 5.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe psiconv oraz dokumentacja formatu plikÃ³w Psion 5.
 
 %package static
 Summary:	Static psiconv library
-Summary(pl):	Statyczna biblioteka psiconv
+Summary(pl.UTF-8):   Statyczna biblioteka psiconv
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static psiconv library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka psiconv.
 
 %prep
