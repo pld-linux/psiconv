@@ -1,5 +1,5 @@
 Summary:	Psion 5 data format library
-Summary(pl.UTF-8):   Biblioteka obsługi plików Psion 5
+Summary(pl.UTF-8):	Biblioteka obsługi plików Psion 5
 Name:		psiconv
 Version:	0.9.7
 Release:	3
@@ -36,7 +36,7 @@ innych niż Windows. Pakiet zawiera:
 
 %package devel
 Summary:	Development part of psiconv
-Summary(pl.UTF-8):   Część psiconv przeznaczona dla programistów
+Summary(pl.UTF-8):	Część psiconv przeznaczona dla programistów
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -48,7 +48,7 @@ Pliki nagłówkowe psiconv oraz dokumentacja formatu plików Psion 5.
 
 %package static
 Summary:	Static psiconv library
-Summary(pl.UTF-8):   Statyczna biblioteka psiconv
+Summary(pl.UTF-8):	Statyczna biblioteka psiconv
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
