@@ -12,6 +12,7 @@ URL:		http://huizen.dds.nl/~frodol/psiconv/
 BuildRequires:	ImageMagick-devel
 BuildRequires:	automake
 BuildRequires:	bc
+BuildRequires:	gcc-c++
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -84,21 +85,24 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS NEWS README TODO
-%attr(755,root,root) %{_bindir}/*
-%attr(755,root,root) %{_libdir}/libpsiconv.so.*.*
+%attr(755,root,root) %{_bindir}/psiconv
+%attr(755,root,root) %{_libdir}/libpsiconv.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libpsiconv.so.?
 %dir %{_sysconfdir}/%{name}
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/%{name}/*
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/psion
 %{_datadir}/%{name}/xhtml
-%{_mandir}/man1/*.1*
+%{_mandir}/man1/psiconv.1*
 
 %files devel
 %defattr(644,root,root,755)
 %doc formats/xhtml/*
+%attr(755,root,root) %{_bindir}/psiconv-config
 %attr(755,root,root) %{_libdir}/libpsiconv.so
 %{_libdir}/libpsiconv.la
 %{_includedir}/psiconv
+%{_mandir}/man1/psiconv-config.1*
 
 %files static
 %defattr(644,root,root,755)
