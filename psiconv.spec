@@ -2,7 +2,7 @@ Summary:	Psion 5 data format library
 Summary(pl.UTF-8):	Biblioteka obsługi plików Psion 5
 Name:		psiconv
 Version:	0.9.7
-Release:	5
+Release:	6
 License:	GPL
 Group:		Libraries
 Source0:	http://huizen.dds.nl/~frodol/psiconv/%{name}-%{version}.tar.gz
