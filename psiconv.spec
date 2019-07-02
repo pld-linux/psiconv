@@ -1,17 +1,20 @@
 Summary:	Psion 5 data format library
 Summary(pl.UTF-8):	Biblioteka obsługi plików Psion 5
 Name:		psiconv
-Version:	0.9.8
-Release:	3
-License:	GPL
+Version:	0.9.9
+Release:	1
+License:	GPL v2+
 Group:		Libraries
-Source0:	http://software.frodo.looijaard.name/psiconv/files/%{name}-%{version}.tar.gz
-# Source0-md5:	8d7548e3c6b9cd408544736133728acd
-URL:		http://software.frodo.looijaard.name/psiconv/
-BuildRequires:	ImageMagick-devel
+Source0:	http://www.frodo.looijaard.name/system/files/software/psiconv/%{name}-%{version}.tar.gz
+# Source0-md5:	286e427b10f4d10aaeef1944210a2ea6
+Patch0:		%{name}-magick.patch
+URL:		http://frodo.looijaard.name/project/psiconv
+BuildRequires:	ImageMagick-devel >= 1:6
+BuildRequires:	autoconf
 BuildRequires:	automake
+# for formats/index_html.sh
 BuildRequires:	bc
-BuildRequires:	gcc-c++
+BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -60,10 +63,16 @@ Statyczna biblioteka psiconv.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
-cp -f /usr/share/automake/config.sub .
-%configure
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
+%{__autoheader}
+%{__automake}
+%configure \
+	MAGICKCONFIG=MagickCore-config
 %{__make}
 
 %install
@@ -72,7 +81,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -rf formats/xhtml/.temp
+%{__rm} $RPM_BUILD_ROOT%{_sysconfdir}/%{name}/psiconv.conf.eg
+
+%{__rm} -r formats/xhtml/.temp
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -82,16 +93,17 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS NEWS README TODO
+%doc AUTHORS ChangeLog NEWS README TODO
 %attr(755,root,root) %{_bindir}/psiconv
 %attr(755,root,root) %{_libdir}/libpsiconv.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libpsiconv.so.?
+%attr(755,root,root) %ghost %{_libdir}/libpsiconv.so.6
 %dir %{_sysconfdir}/%{name}
-%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/%{name}/*
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/%{name}/psiconv.conf
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/psion
 %{_datadir}/%{name}/xhtml
 %{_mandir}/man1/psiconv.1*
+%{_mandir}/man5/psiconv.conf.5*
 
 %files devel
 %defattr(644,root,root,755)
