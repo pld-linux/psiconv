@@ -1,0 +1,22 @@
+--- psiconv-0.9.9/program/psiconv/psiconv.h.orig	2014-10-22 21:46:03.000000000 +0200
++++ psiconv-0.9.9/program/psiconv/psiconv.h	2021-04-04 08:35:02.086782998 +0200
+@@ -52,7 +52,7 @@
+   output_function *output;
+ } *fileformat;
+ 
+-psiconv_list fileformat_list; /* of struct psiconv_fileformat */
++extern psiconv_list fileformat_list; /* of struct psiconv_fileformat */
+ 
+ 
+ #endif /* PSICONV_H */
+--- psiconv-0.9.9/program/psiconv/psiconv.c.orig	2014-10-22 21:45:57.000000000 +0200
++++ psiconv-0.9.9/program/psiconv/psiconv.c	2021-04-04 08:37:16.667059334 +0200
+@@ -48,6 +48,8 @@
+ static void print_version(void);
+ static void strtoupper(char *str);
+ 
++psiconv_list fileformat_list; /* of struct psiconv_fileformat */
++
+ void print_help(void)
+ {
+   fileformat ff;
