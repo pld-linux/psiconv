@@ -5,6 +5,7 @@ Version:	0.9.9
 Release:	7
 License:	GPL v2+
 Group:		Libraries
+#Source0Download: https://frodo.looijaard.name/node/16/release
 Source0:	https://www.frodo.looijaard.name/system/files/software/psiconv/%{name}-%{version}.tar.gz
 # Source0-md5:	286e427b10f4d10aaeef1944210a2ea6
 Patch0:		%{name}-magick.patch
